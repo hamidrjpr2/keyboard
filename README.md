@@ -1,4 +1,4 @@
-![GitHub Repo stars](https://img.shields.io/github/stars/hamidrjpr2/Portfolio?style=flat&logo=star) ![GitHub language count](https://img.shields.io/github/languages/count/hamidrjpr2/Portfolio?color=%23c1121f) ![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/hamidrjpr2/Portfolio)
+![GitHub Repo stars](https://img.shields.io/github/stars/hamidrjpr2/keyboard?style=flat&logo=star) ![GitHub language count](https://img.shields.io/github/languages/count/hamidrjpr2/keyboard?color=%23c1121f) ![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/hamidrjpr2/keyboard)
 
 # Keyboard And Monitor `Dynamic`
 
@@ -7,24 +7,22 @@
   <a href="" target="_blank">Demo</a>
   |
   <span>Give Tips -> </span>
-  <a href="https://telegram.me/hamidrjpr" target="_blank">Telgram</a>
+  <a href="https://hamidrjpr2.github.io/keyboard/" target="_blank">Telgram</a>
 </h4>
 
 ### Project Preview
 ![keyboard](https://github.com/hamidrjpr2/keyboard/assets/155876163/891a9c14-dcdf-4f31-a068-155bfb458a95)
 
-
-
 <br>
 
 ## 📃Description
-  This is my Personal webpage created by tailwind. I also use JavaScript in this webpage to have a more dynamic website.
-  
+  A 3D Typewritting Keyboard which a key gets triggered with every pressed keys in actual keyboard. You can choose between 3 switches and even break the monitor when with a hammer.
+
 <br>
 
 ## 📊Status
 ### Creator : HamidReza Rajabpour
-#### ⚙️ Technology used : HTML, Css, Scss, JS
+#### ⚙️ Technology used : HTML, Css, Scss, JS, 3d
 #### 〽️ style used : `Transform`, `3d-transforms` , `flex` , `animation` `bootstrap` `offset-path`
 <br>
 
