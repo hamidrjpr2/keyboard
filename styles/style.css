@@ -1,0 +1,1100 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+@font-face {
+  font-family: quote;
+  src: url(../fonts/PoetsenOne-Regular.ttf);
+}
+
+@font-face {
+  font-family: vazir;
+  src: url(../fonts/Vazir.ttf);
+}
+
+.surface {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.top {
+  width: 100%;
+  height: calc(1px * 30);
+  position: absolute;
+  top: 0;
+  background: cyan;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+}
+
+.bottom {
+  width: 100%;
+  height: calc(1px * 30);
+  position: absolute;
+  bottom: 0;
+  background: cyan;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transform: rotateX(90deg);
+          transform: rotateX(90deg);
+}
+
+.left {
+  height: 100%;
+  width: calc(1px * 30);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+  position: absolute;
+  left: 0;
+  background-color: cyan;
+}
+
+.right {
+  height: 100%;
+  width: calc(1px * 30);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: rotateY(-90deg);
+          transform: rotateY(-90deg);
+  position: absolute;
+  right: 0;
+  background-color: cyan;
+}
+
+.floor {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transform: translateZ(calc(-1px * 30));
+          transform: translateZ(calc(-1px * 30));
+}
+
+body {
+  background: #1a1919;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+figure {
+  width: 100px;
+  position: absolute;
+  right: 10%;
+  text-align: center;
+}
+
+figure > h5 {
+  font-family: quote;
+  color: white;
+  font-size: 1.5rem;
+  padding-bottom: 15px;
+  margin-bottom: 50px;
+  border-bottom: 2px solid orangered;
+}
+
+figure > img {
+  margin: 10px 0;
+  width: 100%;
+  cursor: pointer;
+  -webkit-transition: -webkit-filter 1s, -webkit-transform .4s;
+  transition: -webkit-filter 1s, -webkit-transform .4s;
+  transition: filter 1s, transform .4s;
+  transition: filter 1s, transform .4s, -webkit-filter 1s, -webkit-transform .4s;
+}
+
+figure > img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+figure > img:last-of-type {
+  -webkit-transition: .6s ease-out;
+  transition: .6s ease-out;
+}
+
+figure > img:last-of-type:hover {
+  -webkit-transform: rotate(calc(360deg * 2));
+          transform: rotate(calc(360deg * 2));
+}
+
+figure .active {
+  -webkit-filter: drop-shadow(0 0 5px rgba(169, 223, 253, 0.6)) drop-shadow(0 0 10px rgba(169, 223, 253, 0.4)) drop-shadow(0 0 20px rgba(169, 223, 253, 0.3)) drop-shadow(0 0 30px rgba(169, 223, 253, 0.2)) drop-shadow(0 0 45px rgba(169, 223, 253, 0.1));
+          filter: drop-shadow(0 0 5px rgba(169, 223, 253, 0.6)) drop-shadow(0 0 10px rgba(169, 223, 253, 0.4)) drop-shadow(0 0 20px rgba(169, 223, 253, 0.3)) drop-shadow(0 0 30px rgba(169, 223, 253, 0.2)) drop-shadow(0 0 45px rgba(169, 223, 253, 0.1));
+}
+
+main {
+  width: 600px;
+  height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  -webkit-perspective: 1200px;
+          perspective: 1200px;
+  cursor: pointer;
+}
+
+main > .wrapper {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  width: 577.5px;
+  height: 210px;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transform: translate(64px, -101px) rotateX(60deg) rotateY(-1deg) rotateZ(-42deg);
+          transform: translate(64px, -101px) rotateX(60deg) rotateY(-1deg) rotateZ(-42deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+main > .wrapper > .keyboard {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: translateZ(calc(1px * calc(30 / 1.4)));
+          transform: translateZ(calc(1px * calc(30 / 1.4)));
+}
+
+main > .wrapper > .keyboard > .surface {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main > .wrapper > .keyboard > .surface > .row {
+  width: 100%;
+  height: 33px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main > .wrapper > .keyboard > .surface > .row > .key {
+  width: 33px;
+  height: 33px;
+  margin-right: 3.45px;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: translateZ(6px);
+          transform: translateZ(6px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: quote;
+  font-size: 8px;
+  color: rgba(0, 0, 0, 0.453);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+main > .wrapper > .keyboard > .surface > .row > .key:first-of-type {
+  margin-left: 3.45px;
+}
+
+main > .wrapper > .keyboard > .surface > .row > .key .left {
+  background: #bfbfbf;
+  width: calc((0.7) * 33px);
+}
+
+main > .wrapper > .keyboard > .surface > .row > .key .right {
+  background: #bfbfbf;
+  width: calc((0.7) * 33px);
+}
+
+main > .wrapper > .keyboard > .surface > .row > .key .bottom {
+  background: #838383;
+  height: calc((0.7) * 33px);
+}
+
+main > .wrapper > .keyboard > .surface > .row > .key .top {
+  background: #838383;
+  height: calc((0.7) * 33px);
+}
+
+main > .wrapper > .keyboard > .surface > .row > .key .floor {
+  background: none;
+  -webkit-transform: translateZ(calc(-1 * 33px + 7px));
+          transform: translateZ(calc(-1 * 33px + 7px));
+}
+
+main > .wrapper > .keyboard > .surface > .row > .key .surface {
+  background: #fafdfd;
+  z-index: -2;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(1) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(1) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(1) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(1) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(1) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(6) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(6) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(6) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(6) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(6) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(7) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(7) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(7) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(7) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(7) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(8) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(8) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(8) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(8) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(8) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(9) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(9) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(9) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(9) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(9) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(10) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(10) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(10) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(10) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(10) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(14) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(14) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(14) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(14) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(14) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(15) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(15) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(15) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(15) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(15) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(16) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(16) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(16) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(16) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-1 > .key:nth-of-type(16) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .surface > .row-2 > .key:nth-of-type(1) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-2 > .key:nth-of-type(1) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-2 > .key:nth-of-type(1) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-2 > .key:nth-of-type(1) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-2 > .key:nth-of-type(1) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .surface > .row-2 > .key:nth-of-type(14) {
+  width: calc(2 * 33px);
+}
+
+main > .wrapper > .keyboard > .surface > .row-2 > .key:nth-of-type(14) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-2 > .key:nth-of-type(14) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-2 > .key:nth-of-type(14) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-2 > .key:nth-of-type(14) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-2 > .key:nth-of-type(14) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .surface > .row-2 > .key:nth-of-type(15) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-2 > .key:nth-of-type(15) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-2 > .key:nth-of-type(15) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-2 > .key:nth-of-type(15) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-2 > .key:nth-of-type(15) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .surface > .row-3 > .key:nth-of-type(1) {
+  width: calc(1.5 * 33px);
+}
+
+main > .wrapper > .keyboard > .surface > .row-3 > .key:nth-of-type(1) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-3 > .key:nth-of-type(1) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-3 > .key:nth-of-type(1) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-3 > .key:nth-of-type(1) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-3 > .key:nth-of-type(1) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .surface > .row-3 > .key:nth-of-type(15) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-3 > .key:nth-of-type(15) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-3 > .key:nth-of-type(15) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-3 > .key:nth-of-type(15) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-3 > .key:nth-of-type(15) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .surface > .row-3 > .key:nth-of-type(14) {
+  width: calc(1.5 * 33px);
+}
+
+main > .wrapper > .keyboard > .surface > .row-3 > .key:nth-of-type(14) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-3 > .key:nth-of-type(14) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-3 > .key:nth-of-type(14) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-3 > .key:nth-of-type(14) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-3 > .key:nth-of-type(14) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .surface > .row-4 > .key:nth-of-type(1) {
+  width: calc(1.7 * 33px);
+}
+
+main > .wrapper > .keyboard > .surface > .row-4 > .key:nth-of-type(1) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-4 > .key:nth-of-type(1) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-4 > .key:nth-of-type(1) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-4 > .key:nth-of-type(1) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-4 > .key:nth-of-type(1) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .surface > .row-4 > .key:nth-of-type(13) {
+  width: calc(2.3 * 33px);
+}
+
+main > .wrapper > .keyboard > .surface > .row-4 > .key:nth-of-type(13) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-4 > .key:nth-of-type(13) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-4 > .key:nth-of-type(13) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-4 > .key:nth-of-type(13) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-4 > .key:nth-of-type(13) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .surface > .row-4 > .key:nth-of-type(14) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-4 > .key:nth-of-type(14) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-4 > .key:nth-of-type(14) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-4 > .key:nth-of-type(14) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-4 > .key:nth-of-type(14) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .surface > .row-5 > .key:nth-of-type(1) {
+  width: calc(2.3 * 33px);
+}
+
+main > .wrapper > .keyboard > .surface > .row-5 > .key:nth-of-type(1) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-5 > .key:nth-of-type(1) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-5 > .key:nth-of-type(1) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-5 > .key:nth-of-type(1) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-5 > .key:nth-of-type(1) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .surface > .row-5 > .key:nth-of-type(12) {
+  width: calc(1.7 * 33px);
+}
+
+main > .wrapper > .keyboard > .surface > .row-5 > .key:nth-of-type(12) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-5 > .key:nth-of-type(12) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-5 > .key:nth-of-type(12) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-5 > .key:nth-of-type(12) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-5 > .key:nth-of-type(12) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .surface > .row-5 > .key:nth-of-type(14) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-5 > .key:nth-of-type(14) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-5 > .key:nth-of-type(14) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-5 > .key:nth-of-type(14) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-5 > .key:nth-of-type(14) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(1) {
+  width: calc(1.1 * 33px);
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(1) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(1) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(1) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(1) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(1) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(2) {
+  width: calc(1.1 * 33px);
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(2) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(2) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(2) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(2) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(2) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(3) {
+  width: calc(1.1 * 33px);
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(3) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(3) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(3) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(3) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(3) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(4) {
+  width: calc(7 * 33px);
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(5) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(5) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(5) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(5) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(5) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(6) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(6) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(6) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(6) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(6) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(7) .left {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(7) .right {
+  background: #98d6f9;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(7) .bottom {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(7) .top {
+  background: #426585;
+}
+
+main > .wrapper > .keyboard > .surface > .row-6 > .key:nth-of-type(7) .surface {
+  background: #a9dffd;
+}
+
+main > .wrapper > .keyboard > .top {
+  width: 100%;
+  height: calc(1px * 30);
+  position: absolute;
+  top: 0;
+  background: #9c9c9c;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+}
+
+main > .wrapper > .keyboard > .bottom {
+  width: 100%;
+  height: calc(1px * 30);
+  position: absolute;
+  bottom: 0;
+  background: #9c9c9c;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transform: rotateX(90deg);
+          transform: rotateX(90deg);
+}
+
+main > .wrapper > .keyboard > .left {
+  height: 100%;
+  width: calc(1px * 30);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: rotateY(90deg);
+          transform: rotateY(90deg);
+  position: absolute;
+  left: 0;
+  background-color: #eae7e5;
+}
+
+main > .wrapper > .keyboard > .right {
+  height: 100%;
+  width: calc(1px * 30);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: rotateY(-90deg);
+          transform: rotateY(-90deg);
+  position: absolute;
+  right: 0;
+  background-color: #eae7e5;
+}
+
+main > .wrapper > .keyboard > .floor {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transform: translateZ(calc(-1px * 30));
+          transform: translateZ(calc(-1px * 30));
+}
+
+main > .wrapper > .monitor {
+  --sb-track-color: #232e33;
+  --sb-thumb-color: #54788c;
+  --sb-size: 10px;
+  cursor: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 693px;
+  height: 444.23077px;
+  padding: 10px;
+  overflow: hidden;
+  background: rgba(169, 223, 253, 0.8);
+  -webkit-box-shadow: 0 0 5px rgba(169, 223, 253, 0.8), 0 0 10px rgba(169, 223, 253, 0.7), 0 0 15px rgba(169, 223, 253, 0.6), 0 0 20px rgba(169, 223, 253, 0.5), 0 0 40px rgba(169, 223, 253, 0.4), 0 0 60px rgba(169, 223, 253, 0.3);
+          box-shadow: 0 0 5px rgba(169, 223, 253, 0.8), 0 0 10px rgba(169, 223, 253, 0.7), 0 0 15px rgba(169, 223, 253, 0.6), 0 0 20px rgba(169, 223, 253, 0.5), 0 0 40px rgba(169, 223, 253, 0.4), 0 0 60px rgba(169, 223, 253, 0.3);
+  border-radius: 10px;
+  -webkit-transform: translateZ(60px) translateX(20%) translateY(-588px) rotateX(-93deg);
+          transform: translateZ(60px) translateX(20%) translateY(-588px) rotateX(-93deg);
+}
+
+main > .wrapper > .monitor::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+main > .wrapper > .monitor::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 5px;
+}
+
+main > .wrapper > .monitor::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 5px;
+}
+
+main > .wrapper > .monitor > h5 {
+  font-family: quote, vazir;
+  font-size: 25px;
+  color: white;
+  word-break: break-all;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+main > .wrapper > .monitor > input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+main > .wrapper > .monitor > .crack {
+  position: absolute;
+  width: 300px;
+  mix-blend-mode: overlay;
+  -webkit-transition: -webkit-clip-path 2s;
+  transition: -webkit-clip-path 2s;
+  transition: clip-path 2s;
+  transition: clip-path 2s, -webkit-clip-path 2s;
+  pointer-events: none;
+  -webkit-clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%);
+          clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%);
+}
+
+main > .wrapper > .monitor .cracking {
+  -webkit-animation: 1s cracking cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+          animation: 1s cracking cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+@-webkit-keyframes cracking {
+  0% {
+    -webkit-clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%);
+            clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  }
+  16% {
+    -webkit-clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%);
+            clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  }
+  24% {
+    -webkit-clip-path: polygon(48% 41%, 55% 46%, 66% 41%, 61% 57%, 60% 66%, 46% 68%, 37% 64%, 38% 55%, 50% 57%, 44% 48%);
+            clip-path: polygon(48% 41%, 55% 46%, 66% 41%, 61% 57%, 60% 66%, 46% 68%, 37% 64%, 38% 55%, 50% 57%, 44% 48%);
+  }
+  36% {
+    -webkit-clip-path: polygon(48% 41%, 55% 46%, 66% 41%, 61% 57%, 60% 66%, 46% 68%, 37% 64%, 38% 55%, 50% 57%, 44% 48%);
+            clip-path: polygon(48% 41%, 55% 46%, 66% 41%, 61% 57%, 60% 66%, 46% 68%, 37% 64%, 38% 55%, 50% 57%, 44% 48%);
+  }
+  44% {
+    -webkit-clip-path: polygon(40% 26%, 60% 18%, 73% 29%, 69% 46%, 84% 53%, 60% 70%, 44% 74%, 29% 65%, 15% 48%, 20% 26%);
+            clip-path: polygon(40% 26%, 60% 18%, 73% 29%, 69% 46%, 84% 53%, 60% 70%, 44% 74%, 29% 65%, 15% 48%, 20% 26%);
+  }
+  56% {
+    -webkit-clip-path: polygon(40% 26%, 60% 18%, 73% 29%, 69% 46%, 84% 53%, 60% 70%, 44% 74%, 29% 65%, 15% 48%, 20% 26%);
+            clip-path: polygon(40% 26%, 60% 18%, 73% 29%, 69% 46%, 84% 53%, 60% 70%, 44% 74%, 29% 65%, 15% 48%, 20% 26%);
+  }
+  64% {
+    -webkit-clip-path: polygon(16% 8%, 57% 12%, 86% 19%, 76% 44%, 91% 65%, 76% 86%, 48% 89%, 12% 94%, 3% 60%, 4% 22%);
+            clip-path: polygon(16% 8%, 57% 12%, 86% 19%, 76% 44%, 91% 65%, 76% 86%, 48% 89%, 12% 94%, 3% 60%, 4% 22%);
+  }
+  76% {
+    -webkit-clip-path: polygon(16% 8%, 57% 12%, 86% 19%, 76% 44%, 91% 65%, 76% 86%, 48% 89%, 12% 94%, 3% 60%, 4% 22%);
+            clip-path: polygon(16% 8%, 57% 12%, 86% 19%, 76% 44%, 91% 65%, 76% 86%, 48% 89%, 12% 94%, 3% 60%, 4% 22%);
+  }
+  84% {
+    -webkit-clip-path: polygon(0 0, 53% 0, 100% 0, 100% 38%, 100% 61%, 100% 100%, 44% 100%, 0 100%, 0 66%, 0 35%);
+            clip-path: polygon(0 0, 53% 0, 100% 0, 100% 38%, 100% 61%, 100% 100%, 44% 100%, 0 100%, 0 66%, 0 35%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0 0, 53% 0, 100% 0, 100% 38%, 100% 61%, 100% 100%, 44% 100%, 0 100%, 0 66%, 0 35%);
+            clip-path: polygon(0 0, 53% 0, 100% 0, 100% 38%, 100% 61%, 100% 100%, 44% 100%, 0 100%, 0 66%, 0 35%);
+  }
+}
+
+@keyframes cracking {
+  0% {
+    -webkit-clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%);
+            clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  }
+  16% {
+    -webkit-clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%);
+            clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  }
+  24% {
+    -webkit-clip-path: polygon(48% 41%, 55% 46%, 66% 41%, 61% 57%, 60% 66%, 46% 68%, 37% 64%, 38% 55%, 50% 57%, 44% 48%);
+            clip-path: polygon(48% 41%, 55% 46%, 66% 41%, 61% 57%, 60% 66%, 46% 68%, 37% 64%, 38% 55%, 50% 57%, 44% 48%);
+  }
+  36% {
+    -webkit-clip-path: polygon(48% 41%, 55% 46%, 66% 41%, 61% 57%, 60% 66%, 46% 68%, 37% 64%, 38% 55%, 50% 57%, 44% 48%);
+            clip-path: polygon(48% 41%, 55% 46%, 66% 41%, 61% 57%, 60% 66%, 46% 68%, 37% 64%, 38% 55%, 50% 57%, 44% 48%);
+  }
+  44% {
+    -webkit-clip-path: polygon(40% 26%, 60% 18%, 73% 29%, 69% 46%, 84% 53%, 60% 70%, 44% 74%, 29% 65%, 15% 48%, 20% 26%);
+            clip-path: polygon(40% 26%, 60% 18%, 73% 29%, 69% 46%, 84% 53%, 60% 70%, 44% 74%, 29% 65%, 15% 48%, 20% 26%);
+  }
+  56% {
+    -webkit-clip-path: polygon(40% 26%, 60% 18%, 73% 29%, 69% 46%, 84% 53%, 60% 70%, 44% 74%, 29% 65%, 15% 48%, 20% 26%);
+            clip-path: polygon(40% 26%, 60% 18%, 73% 29%, 69% 46%, 84% 53%, 60% 70%, 44% 74%, 29% 65%, 15% 48%, 20% 26%);
+  }
+  64% {
+    -webkit-clip-path: polygon(16% 8%, 57% 12%, 86% 19%, 76% 44%, 91% 65%, 76% 86%, 48% 89%, 12% 94%, 3% 60%, 4% 22%);
+            clip-path: polygon(16% 8%, 57% 12%, 86% 19%, 76% 44%, 91% 65%, 76% 86%, 48% 89%, 12% 94%, 3% 60%, 4% 22%);
+  }
+  76% {
+    -webkit-clip-path: polygon(16% 8%, 57% 12%, 86% 19%, 76% 44%, 91% 65%, 76% 86%, 48% 89%, 12% 94%, 3% 60%, 4% 22%);
+            clip-path: polygon(16% 8%, 57% 12%, 86% 19%, 76% 44%, 91% 65%, 76% 86%, 48% 89%, 12% 94%, 3% 60%, 4% 22%);
+  }
+  84% {
+    -webkit-clip-path: polygon(0 0, 53% 0, 100% 0, 100% 38%, 100% 61%, 100% 100%, 44% 100%, 0 100%, 0 66%, 0 35%);
+            clip-path: polygon(0 0, 53% 0, 100% 0, 100% 38%, 100% 61%, 100% 100%, 44% 100%, 0 100%, 0 66%, 0 35%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0 0, 53% 0, 100% 0, 100% 38%, 100% 61%, 100% 100%, 44% 100%, 0 100%, 0 66%, 0 35%);
+            clip-path: polygon(0 0, 53% 0, 100% 0, 100% 38%, 100% 61%, 100% 100%, 44% 100%, 0 100%, 0 66%, 0 35%);
+  }
+}
+
+main > .wrapper > .monitor .hammer {
+  position: absolute;
+  width: 70px;
+  display: none;
+  pointer-events: none;
+  -webkit-transform-origin: 100% 100%;
+          transform-origin: 100% 100%;
+  -webkit-transform: translate(-5%, -50%) rotate(5deg);
+          transform: translate(-5%, -50%) rotate(5deg);
+}
+
+.press {
+  -webkit-transform: translateZ(-2px) !important;
+          transform: translateZ(-2px) !important;
+}
+
+.press > .surface {
+  background: #ffccc1 !important;
+}
+/*# sourceMappingURL=style.css.map */
