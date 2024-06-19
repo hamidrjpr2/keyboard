@@ -116,6 +116,17 @@ body {
   height: 100vh;
 }
 
+.logo{
+  position: absolute;
+  z-index: 200;
+  left: 30px;
+  bottom: 5px;
+  
+  >img {
+    clip-path: polygon(0 30%, 100% 30%, 100% 71%, 0 71%);
+    width: 350px;
+  }
+}
 
 figure {
   width: 100px;
